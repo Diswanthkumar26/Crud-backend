@@ -18,6 +18,10 @@ import java.util.List;
 public class UserController {
     @Autowired
     UserService service;
+    @GetMapping("/")
+    public String home() {
+        return "Backend is running!";
+    }
     @PostMapping("/user")
     public ResponseEntity<User> addUser(@RequestBody User user){
         return new ResponseEntity<>(service.addUser(user), HttpStatus.OK);
