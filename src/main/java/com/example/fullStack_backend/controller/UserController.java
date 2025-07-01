@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin("http://localhost:5173")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "https://crud-frontend-zeta-dusky.vercel.app"
+})
 public class UserController {
     @Autowired
     UserService service;
